@@ -1,0 +1,7 @@
+[sqlfluff]
+templater = dbt
+dialect = ansi
+
+[sqlfluff:rules]
+tab_space_size = 4
+max_line_length = 120
