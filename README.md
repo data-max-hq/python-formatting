@@ -10,31 +10,32 @@ Using:
 for code formatting
 
 Install dependencies:
+
 ```bash
-pip install -r requirements.txt
+poetry install
 ```
 
 Run tests
 ```
-pytest
+poetry run pytest
 ```
 
 Run tests with coverage report
 ```
-pytest --cov-report term --cov=src tests/
+poetry run pytest --cov-report term --cov=src tests/
 ```
 
 Install pre-commit hooks
 ```bash
-pre-commit install
+poetry run pre-commit install
 ```
 
 Pre-commit check
 ```bash
-pre-commit run --all-files
+poetry run pre-commit run --all-files
 ```
 
 sqlfluff lints
 ```bash
-sqlfluff lint .
+poetry run sqlfluff lint dbt/dbt_test_project
 ```

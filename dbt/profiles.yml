@@ -1,0 +1,13 @@
+config:
+  use_colors: False
+
+default:
+  outputs:
+    test:
+      type: bigquery
+      method: service-account
+      project: test_project
+      dataset: test_dataset
+      timeout_seconds: 300
+      location: EU
+      keyfile: /mnt/service_account.json
