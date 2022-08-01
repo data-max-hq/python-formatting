@@ -1,5 +1,6 @@
 # python-formatting
 Using:
+* poetry
 * pre-commit
 * isort
 * black
@@ -7,6 +8,7 @@ Using:
 * sqlfluff 
 * pytest
 * pytest-cov
+
 for code formatting
 
 Install dependencies:
