@@ -18,6 +18,4 @@ jobs:
 
       - name: Runnig tests
         run: |
-          pip install poetry
-          poetry install
           poetry run pytest --cov-report term --cov=dags tests/

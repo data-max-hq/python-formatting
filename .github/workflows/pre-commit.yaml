@@ -16,8 +16,11 @@ jobs:
         with:
           python-version: 3.9
 
-      - name: Linting
+      - name: Install dependencies
         run: |
           pip install poetry
           poetry install
+
+      - name: Linting
+        run: |
           poetry run pre-commit run --all-files
