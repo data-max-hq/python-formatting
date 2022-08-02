@@ -22,6 +22,7 @@ jobs:
         run: |
           curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
           export PATH=$PATH:$HOME/.poetry/bin
+          echo "PATH=$PATH:$HOME/.poetry/bin" >> "$GITHUB_ENV"
           poetry config virtualenvs.create false
 
       - name: Cache Poetry virtualenv
@@ -35,7 +36,6 @@ jobs:
 
       - name: Set Poetry config
         run: |
-          export PATH=$PATH:$HOME/.poetry/bin
           poetry config settings.virtualenvs.in-project false
           poetry config settings.virtualenvs.path ~/.virtualenvs
 
