@@ -8,13 +8,43 @@ on:
       - main
 
 jobs:
-  setup:
-    uses: ./.github/workflows/setup.yaml
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
 
-  linting:
-    needs: setup
-    uses: ./.github/workflows/pre-commit.yaml
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
 
-  testing:
-    needs: linting
-    uses: ./.github/workflows/pytest.yaml
+      - name: Install Poetry
+        run: |
+          pip install poetry
+          poetry install
+
+      - name: Cache Poetry virtualenv
+        uses: actions/cache@v1
+        id: cache
+        with:
+          path: ~/.virtualenvs
+          key: poetry-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            poetry-${{ hashFiles('**/poetry.lock') }}
+
+      - name: Set Poetry config
+        run: |
+          poetry config settings.virtualenvs.in-project false
+          poetry config settings.virtualenvs.path ~/.virtualenvs
+
+      - name: Install Dependencies
+        run: poetry install
+        if: steps.cache.outputs.cache-hit != 'true'
+
+      - name: Linting
+        run: |
+          poetry run pre-commit run --all-files
+
+      - name: Running tests
+        run: |
+          poetry run pytest --cov-report term --cov=src tests/
