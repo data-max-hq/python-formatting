@@ -1,4 +1,4 @@
-name: Run unit tests
+name: Setup
 
 on:
   workflow_call:
@@ -10,12 +10,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
       - name: Set up Python 3.9
         uses: actions/setup-python@v1
         with:
           python-version: 3.9
 
-      - name: Runnig tests
+      - name: Install dependencies
         run: |
-          poetry run pytest --cov-report term --cov=src tests/
+          pip install poetry
+          poetry install

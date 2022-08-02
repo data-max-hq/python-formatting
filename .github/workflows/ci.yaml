@@ -8,7 +8,11 @@ on:
       - main
 
 jobs:
+  setup:
+    uses: ./.github/workflows/setup.yaml
+
   linting:
+    needs: setup
     uses: ./.github/workflows/pre-commit.yaml
 
   testing:
