@@ -35,6 +35,7 @@ jobs:
 
       - name: Set Poetry config
         run: |
+          export PATH=$PATH:$HOME/.poetry/bin
           poetry config settings.virtualenvs.in-project false
           poetry config settings.virtualenvs.path ~/.virtualenvs
 
