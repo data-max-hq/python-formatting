@@ -1,0 +1,16 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - develop
+      - main
+
+jobs:
+  linting:
+    uses: ./.github/workflows/pre-commit.yaml
+
+  testing:
+    needs: linting
+    uses: ./.github/workflows/pytest.yaml
