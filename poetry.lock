@@ -748,14 +748,14 @@ testing-integration = ["build[virtualenv]", "filelock (>=3.4.0)", "jaraco.envs (
 
 [[package]]
 name = "sqlfluff"
-version = "1.4.5"
+version = "2.0.3"
 description = "The SQL Linter for Humans"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "sqlfluff-1.4.5-py3-none-any.whl", hash = "sha256:10b193ee009046f8fe3af9d1895f767b691635653cccc8698bc01eee2ccb69df"},
-    {file = "sqlfluff-1.4.5.tar.gz", hash = "sha256:68a8abde2fa22b76a20d908e22087e2e12b0e4a2085be2ea955ff6305b0fea30"},
+    {file = "sqlfluff-2.0.3-py3-none-any.whl", hash = "sha256:ccfe91536f79929c7540acb8f16ff62ae3cf95e97e88da810315613000d7d356"},
+    {file = "sqlfluff-2.0.3.tar.gz", hash = "sha256:3fe168e6a7d44133bb4cc23852587ce6b0ce85c27b60e8e5a0200d89e734197a"},
 ]
 
 [package.dependencies]
@@ -770,7 +770,7 @@ pytest = "*"
 pyyaml = ">=5.1"
 regex = "*"
 tblib = "*"
-toml = "*"
+toml = {version = "*", markers = "python_version < \"3.11\""}
 tqdm = "*"
 typing-extensions = "*"
 
@@ -867,4 +867,4 @@ test = ["covdefaults (>=2.2.2)", "coverage (>=7.1)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "490c11d68068b481c1d4e5e1f8ad02e5f9548e1c9d3871cddaa0b5b7c2690c1f"
+content-hash = "2355be1f44f30729dbbf293a1eb718ab203997833c7eb8635da1dce48e1c672d"
