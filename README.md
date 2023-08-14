@@ -42,4 +42,13 @@ sqlfluff lints
 poetry run sqlfluff lint dbt/dbt_test_project
 ```
 
+## Versioning
+```sh
+VERSION=$(poetry version patch --short)
+git commit -am "Bump Version"
+git tag $VERSION
+git push --tags
+git push
+```
+
 Made with ❤️ by [data-max.io](https://www.data-max.io/).
