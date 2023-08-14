@@ -50,3 +50,8 @@ jobs:
       - name: Running tests
         run: |
           poetry run pytest --cov-report term --cov=src tests/
+
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
