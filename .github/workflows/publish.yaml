@@ -2,11 +2,11 @@ name: Publish
 
 on:
   push:
-    branches:
-      - main
+    #branches:
+    #  - main
     # Pattern matched against refs/tags
-    #tags:
-    #  - "**"
+    tags:
+      - "**"
 
 jobs:
   publish:
