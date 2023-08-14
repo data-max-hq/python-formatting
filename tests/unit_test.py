@@ -1,4 +1,4 @@
-from src import get_string
+from src.python_formatting import get_string
 
 
 def test_dummy():
