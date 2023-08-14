@@ -57,6 +57,7 @@ jobs:
       - name: Config
         run: |
           poetry config --list
+          poetry self add "keyrings.google-artifactregistry-auth
           poetry config repositories.artifact_registry ${{ vars.PYTHON_REGISTRY_URL }}
 
       - name: Publish Package
