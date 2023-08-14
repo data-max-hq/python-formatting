@@ -43,3 +43,6 @@ jobs:
       - name: Install Dependencies
         run: poetry install
         if: steps.cache.outputs.cache-hit != 'true'
+
+      - name: Publish Package
+        run: poetry publish --repository $PYTHON_REGISTRY_URL
