@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "python-formatting"
-version = "0.1.0"
+version = "0.2.0"
 description = "Sample project to setup code testing and formatting tools"
 authors = ["Sadik Bakiu <sadik@data-max.io>"]
 license = "Apache 2.0"
