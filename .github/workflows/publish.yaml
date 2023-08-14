@@ -12,7 +12,15 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: "Check out"
+        uses: actions/checkout@v3
+
+      - id: 'auth'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          token_format: 'access_token'
+          credentials_json: "${{ secrets.GOOGLE_CREDENTIALS }}"
 
       - name: Set up Python 3.9
         uses: actions/setup-python@v4
