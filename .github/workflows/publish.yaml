@@ -47,6 +47,6 @@ jobs:
       - name: Publish Package
         run: |
           echo "repository variable : $REPOSITORY_VAR"
-          poetry publish --repository ${{ vars.PYTHON_REGISTRY_URL }}
+          poetry publish --build --repository ${{ vars.PYTHON_REGISTRY_URL }}
         env:
           REPOSITORY_VAR: ${{ vars.PYTHON_REGISTRY_URL }}
