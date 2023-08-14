@@ -15,15 +15,6 @@ jobs:
       - name: "Check out"
         uses: actions/checkout@v3
 
-      - id: 'auth'
-        name: 'Authenticate to Google Cloud'
-        uses: 'google-github-actions/auth@v1'
-        with:
-          credentials_json: "${{ secrets.GOOGLE_CREDENTIALS }}"
-
-      - name: Set up Cloud SDK
-        uses: 'google-github-actions/setup-gcloud@v1'
-
       - name: Set up Python 3.9
         uses: actions/setup-python@v4
         with:
@@ -53,6 +44,16 @@ jobs:
       - name: Install Dependencies
         run: poetry install
         if: steps.cache.outputs.cache-hit != 'true'
+
+      - id: 'auth'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          token_format: 'access_token'
+          credentials_json: "${{ secrets.GOOGLE_CREDENTIALS }}"
+
+      - name: Set up Cloud SDK
+        uses: 'google-github-actions/setup-gcloud@v1'
 
       - name: Config
         run: |
