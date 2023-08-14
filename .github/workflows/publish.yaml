@@ -45,4 +45,8 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
 
       - name: Publish Package
-        run: poetry publish --repository $PYTHON_REGISTRY_URL
+        run: |
+          echo "repository variable : $REPOSITORY_VAR"
+          poetry publish --repository ${{ vars.PYTHON_REGISTRY_URL }}
+        env:
+          REPOSITORY_VAR: ${{ vars.PYTHON_REGISTRY_URL }}
