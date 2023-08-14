@@ -1,0 +1,45 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - main
+    # Pattern matched against refs/tags
+    #tags:
+    #  - "**"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          export PATH=$PATH:$HOME/.poetry/bin
+          echo "PATH=$PATH:$HOME/.poetry/bin" >> "$GITHUB_ENV"
+          poetry config virtualenvs.create false
+
+      - name: Cache Poetry virtualenv
+        uses: actions/cache@v1
+        id: cache
+        with:
+          path: ~/.virtualenvs
+          key: poetry-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            poetry-${{ hashFiles('**/poetry.lock') }}
+
+      - name: Set Poetry config
+        run: |
+          poetry config virtualenvs.in-project false
+          poetry config virtualenvs.path ~/.virtualenvs
+
+      - name: Install Dependencies
+        run: poetry install
+        if: steps.cache.outputs.cache-hit != 'true'
