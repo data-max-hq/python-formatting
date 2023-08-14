@@ -22,6 +22,9 @@ jobs:
           token_format: 'access_token'
           credentials_json: "${{ secrets.GOOGLE_CREDENTIALS }}"
 
+      - name: Set up Cloud SDK
+        uses: 'google-github-actions/setup-gcloud@v1'
+
       - name: Set up Python 3.9
         uses: actions/setup-python@v4
         with:
