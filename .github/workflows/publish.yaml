@@ -44,9 +44,11 @@ jobs:
         run: poetry install
         if: steps.cache.outputs.cache-hit != 'true'
 
+      - name: Config
+        run: |
+          poetry config --list
+          poetry config repositories.artifact_registry ${{ vars.PYTHON_REGISTRY_URL }}
+
       - name: Publish Package
         run: |
-          echo "repository variable : $REPOSITORY_VAR"
-          poetry publish --build --repository ${{ vars.PYTHON_REGISTRY_URL }}
-        env:
-          REPOSITORY_VAR: ${{ vars.PYTHON_REGISTRY_URL }}
+          poetry publish --build --repository artifact_registry

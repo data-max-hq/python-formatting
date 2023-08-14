@@ -11,10 +11,10 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
 
       - name: Set up Python 3.9
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: 3.9
 
@@ -26,7 +26,7 @@ jobs:
           poetry config virtualenvs.create false
 
       - name: Cache Poetry virtualenv
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         id: cache
         with:
           path: ~/.virtualenvs
@@ -50,8 +50,3 @@ jobs:
       - name: Running tests
         run: |
           poetry run pytest --cov-report term --cov=src tests/
-
-  publish:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
