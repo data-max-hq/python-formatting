@@ -41,3 +41,5 @@ sqlfluff lints
 ```bash
 poetry run sqlfluff lint dbt/dbt_test_project
 ```
+
+Made with ❤️ by [data-max.io](https://www.data-max.io/).
