@@ -17,7 +17,7 @@ flake8 = "^6.0.0"
 pre-commit = "^3.4.0"
 pytest = "^7.4.1"
 pytest-cov = "^4.1.0"
-black = "^23.1.0"
+black = "^23.9.1"
 sqlfluff = "^2.3.1"
 
 [build-system]
