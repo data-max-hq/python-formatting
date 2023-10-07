@@ -1171,13 +1171,13 @@ files = [
 
 [[package]]
 name = "sqlfluff"
-version = "2.3.1"
+version = "2.3.2"
 description = "The SQL Linter for Humans"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "sqlfluff-2.3.1-py3-none-any.whl", hash = "sha256:726e8c81afee44ab1b823b2a67a2359a75c33a85366ad79353b92fa4a4346ab1"},
-    {file = "sqlfluff-2.3.1.tar.gz", hash = "sha256:52b872acf3a6bbab240415ce797722bf6eeab83361f2755acc465e393f6efde8"},
+    {file = "sqlfluff-2.3.2-py3-none-any.whl", hash = "sha256:85c8b683e283ff632fe28529ddb60585ea2d1d3c614fc7a1db171632b99dcce3"},
+    {file = "sqlfluff-2.3.2.tar.gz", hash = "sha256:3403ce7e9133766d7336b7e26638657ec6cc9e5610e35186b7f02cc427dd49b7"},
 ]
 
 [package.dependencies]
@@ -1314,4 +1314,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "28541bb1bf9126c71d2eb7a749aa520816b45abb9b6960b380a324b164b34446"
+content-hash = "065f9ca46c9205c743d280945c24a809bc194450d041aa20f9b9d3b239dd9a23"
