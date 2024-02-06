@@ -15,7 +15,7 @@ keyrings-google-artifactregistry-auth = "^1.1.2"
 [tool.poetry.group.dev.dependencies]
 flake8 = "^7.0.0"
 pre-commit = "^3.6.0"
-pytest = "^7.4.3"
+pytest = "^8.0.0"
 pytest-cov = "^4.1.0"
 black = "^23.10.1"
 sqlfluff = "^2.3.5"
