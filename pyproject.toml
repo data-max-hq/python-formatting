@@ -7,7 +7,7 @@ license = "Apache 2.0"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-keyring = "^25.1.0"
+keyring = "^25.2.1"
 keyrings-google-artifactregistry-auth = "^1.1.2"
 
 [tool.poetry.dev-dependencies]
