@@ -1206,13 +1206,13 @@ files = [
 
 [[package]]
 name = "sqlfluff"
-version = "3.0.3"
+version = "3.0.7"
 description = "The SQL Linter for Humans"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "sqlfluff-3.0.3-py3-none-any.whl", hash = "sha256:cca1f62f38e31c60461f6e6f3b233552d4625b60395d78eadb74c6695fb2370d"},
-    {file = "sqlfluff-3.0.3.tar.gz", hash = "sha256:46b5aa5326560eba078ae39b232bb19b8e5abdabeaa18ed8556f18b558330d71"},
+    {file = "sqlfluff-3.0.7-py3-none-any.whl", hash = "sha256:82c9cb9ea4a67ac0d69540af214e39d7e4dc63d92922bc164d526dae1e08ee02"},
+    {file = "sqlfluff-3.0.7.tar.gz", hash = "sha256:d49b52c4577ce113ef6318a933c7a7fedd25852dea5e9fe0981cf301c6b73927"},
 ]
 
 [package.dependencies]
@@ -1229,7 +1229,6 @@ regex = "*"
 tblib = "*"
 toml = {version = "*", markers = "python_version < \"3.11\""}
 tqdm = "*"
-typing-extensions = "*"
 
 [[package]]
 name = "tblib"
@@ -1349,4 +1348,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "011d7f052ad353f38cceaea0cb10bc10ab207cf71b4d58630c432271044c7313"
+content-hash = "2ac7e8e519972d11b0295bffde8bed45d7af805fb499fa33c0008bcc841ee511"
